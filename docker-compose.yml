@@ -4,14 +4,18 @@ services:
     image: postgres:12.3
     restart: always
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: secret
+      POSTGRES_DB_FILE: /run/secrets/postgres_db
+      POSTGRES_USER_FILE: /run/secrets/postgres_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       PGDATA: /var/lib/postgresql/data
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    secrets:
+      - postgres_password
+      - postgres_user
+      - postgres_db
 
   pgadmin:
     image: dpage/pgadmin4:4.22
@@ -30,3 +34,11 @@ services:
 volumes:
   db-data:
   pgadmin-data:
+
+secrets:
+  postgres_password:
+    file: ./secrets/postgres_password
+  postgres_db:
+    file: ./secrets/postgres_db
+  postgres_user:
+    file: ./secrets/postgres_user
