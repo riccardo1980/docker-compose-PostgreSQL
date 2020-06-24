@@ -1,10 +1,10 @@
-# Docker compose for PostgreSQL and pgadmin
+# Docker compose for PostgreSQL and pgAdmin
 ## Configuration
 ### PostgreSQL
 - `POSTGRES_DB: postgres`  
 - `POSTGRES_USER: postgres`  
 - `POSTGRES_PASSWORD: secret`
-### pgadmin
+### pgAdmin
 - `PGADMIN_DEFAULT_EMAIL: admin@linuxhint.com`  
 - `PGADMIN_DEFAULT_PASSWORD: secret`  
 
