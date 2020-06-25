@@ -1,9 +1,11 @@
 # Docker compose for PostgreSQL and pgAdmin
 ## Configuration
+Configuration can be obtained by editing files in `secrets` folder. 
 ### PostgreSQL
-- `POSTGRES_DB: postgres`  
-- `POSTGRES_USER: postgres`  
-- `POSTGRES_PASSWORD: secret`
+- PostgreSQL default database: `secrets/postgres_db`
+- PostgreSQL username: `secrets/postgres_user`
+- PostgreSQL password: `secrets/postgres_password`
+
 ### pgAdmin
 - `PGADMIN_DEFAULT_EMAIL: admin@linuxhint.com`  
 - `PGADMIN_DEFAULT_PASSWORD: secret`  
