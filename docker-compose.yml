@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   db:
-    image: postgres:12.3
+    image: postgis/postgis:12-3.0
     restart: always
     environment:
       POSTGRES_DB_FILE: /run/secrets/postgres_db
@@ -18,7 +18,7 @@ services:
       - postgres_db
 
   pgadmin:
-    image: dpage/pgadmin4:4.22
+    image: dpage/pgadmin4:4.23
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@linuxhint.com
